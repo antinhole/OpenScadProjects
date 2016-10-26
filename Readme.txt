@@ -14,7 +14,7 @@ Projects
         ....
         PartX
         ExtPart -> a part that will not be printed .. a stepper motor, a screw, pi/ardino, etc 
-    Project1(a thing)
+    Project2(a thing)
         PartA
         PartB
         ....
