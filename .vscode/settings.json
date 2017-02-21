@@ -4,6 +4,7 @@
     "editor.fontSize": 14,
     "editor.renderWhitespace": "all",
     "editor.lineNumbers": "on",
-    "markdown.preview.lineHeight": 1.0
+    "markdown.preview.lineHeight": 1.0,
+    "editor.folding": true
     
 }
