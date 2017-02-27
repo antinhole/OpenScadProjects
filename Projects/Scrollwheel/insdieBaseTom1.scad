@@ -1,12 +1,12 @@
 
 use  <\..\..\Libs\ComonFuntions.scad>
 
-PlateHight=2.5/2;
+PlateHight=1.75;
 baseD=53.0;
-baseHoleD=21;
+baseHoleD=22;
 holeD=1;
 $fn=70;
-HoleSpaceing=2.54;//Try:1
+HoleSpaceing=2.54;
 
 bracketspaceing=8.5;
 bracketholesD=1.0;
@@ -66,14 +66,17 @@ module base()
 {
     difference()
 {
-cylinder(d=baseD, h=PlateHight, center=true);
-cylinder(d1=baseHoleD,d2=baseHoleD+2, h=PlateHight, center=true);
+cylinder(d=baseD  , h=PlateHight, center=true);
+cylinder(d=baseHoleD, h=PlateHight, center=true);
 
-translate([0,baseD/2-8.5,0])
+
+spoke_ify(7)
+{
+translate([0,baseD/2-bracketspaceing,0])
 {
 holes();
-}    
-
+} 
+}
 
 }
 }

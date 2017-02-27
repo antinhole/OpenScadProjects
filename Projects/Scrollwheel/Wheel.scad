@@ -88,7 +88,7 @@ module WheelWithFingers()
 difference()
 {
     cylinder(r=outerR, h=Hight, center=true);
-    translate([0, 0, 4]) {
+    translate([0, 0, Hight-fingerHight]) {
         cylinder(r=innerR, h=Hight, center=true);
         }
 
@@ -100,7 +100,7 @@ echo(str("numberOfFingers = ", numberOfFingers));
  spoke_ify(numberOfFingers){
         translate([outerR-fingerFaceThickness-1, 0,Hight/2-fingerHight]) 
             {
-            cube([fingerFaceThickness*2,fingerFaceThickness,fingerHight]);  
+            cube([fingerFaceThickness*2,fingerFaceThickness,fingerHight], center=true);  
             }
     }
 }
