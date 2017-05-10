@@ -2,7 +2,7 @@ use <\..\..\Libs\taz5Print_sizes.scad>
 include <Consts.scad>
 
 
-module bottleHoles(outsideR,insideR,Hight,number_of_bottles,Bottle_r)
+module bottleHoles(outsideR,insideR,,number_of_bottles,Bottle_r)
 {
       for (i=[0:number_of_bottles])
       {
@@ -10,19 +10,19 @@ module bottleHoles(outsideR,insideR,Hight,number_of_bottles,Bottle_r)
           {
               translate([outsideR,0,0])
             {
-      cylinder(h=Hight,r=Bottle_r,center=true);
+      cylinder(h=,r=Bottle_r,center=true);
               }
           
            }
         }
     }
  
-module base(outsideR,insideR,Hight,number_of_bottles,Bottle_r)
+module base(outsideR,insideR,,number_of_bottles,Bottle_r)
 {
   difference(){
-      cylinder(h=Hight,r=outsideR,center=true);
-      cylinder(h=Hight+1,r=insideR,center=true);
-bottleHoles(outsideR,insideR,Hight,number_of_bottles,Bottle_r);
+      cylinder(h=,r=outsideR,center=true);
+      cylinder(h=+1,r=insideR,center=true);
+bottleHoles(outsideR,insideR,,number_of_bottles,Bottle_r);
       }
     }
 

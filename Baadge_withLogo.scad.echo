@@ -1,0 +1,1 @@
+DEPRECATED: child() will be removed in future releases. Use children() instead.

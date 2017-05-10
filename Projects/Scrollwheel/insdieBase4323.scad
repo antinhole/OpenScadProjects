@@ -5,7 +5,7 @@ PlateHight=1.75;
 baseD=53.0;
 baseHoleD=21;
 holeD=1;
-$fn=70;
+//$fn=50;
 HoleSpaceing=2.54;//Try:1
 
 bracketspaceing=8.5;
@@ -70,13 +70,15 @@ cylinder(d=baseD  , h=PlateHight, center=true);
 cylinder(d1=baseHoleD,d2=baseHoleD-3, h=PlateHight, center=true);
 
 
-spoke_ify(6)
-{
-translate([0,baseD/2-bracketspaceing,0])
-{
-holes();
-} 
-}
+//spoke_ify(3)
+//{
+translate([0,baseD/2-bracketspaceing,0]) cube ([9,20,3],center=true);
+//{
+//holes();
+//} 
+//}
+
+
 
 }
 }

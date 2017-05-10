@@ -39,6 +39,29 @@
                  "suppressTaskName":true
             },
             {
+               
+                "taskName": "MakeSTL",
+                "isBuildCommand": false,
+                "args": [
+                    "\"C:\\Program Files\\OpenSCAD\\openscad.exe\""
+                    ,"--o ${fileBasenameNoExtension}.stl"
+                    ,"${file}"
+                    ],
+                 "echoCommand": true,
+                 "suppressTaskName":true
+            },
+             {
+               
+                "taskName": "RnMakeFile",
+                "isBuildCommand": false,
+                "args": [
+                    "${fileDirname}\\Make.bat"
+                    ,"${file}"
+                    ],
+                 "echoCommand": true,
+                 "suppressTaskName":true
+            },
+            {
                 "taskName": "Check",
                 "isBuildCommand": false,
                 "args": [
