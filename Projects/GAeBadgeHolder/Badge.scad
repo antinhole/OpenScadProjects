@@ -30,18 +30,20 @@ module slotforlanyardthingamagiggy() {
     }
 }
 module TriHoleforlanyardthingamagiggy() {
-  s=25;
+  s=20;
+  Hight=4;
+  translate([0,3.4,1])
      difference(){
     hull(){
-      translate([-1*s,-6,0])  cylinder(r=4, h=2, center=true);
-        translate([0,6,0])  cylinder(r=4, h=2, center=true);
-      translate([s,-6,0])  cylinder(r=4, h=2, center=true);
+      translate([-1*s,-6,0])  cylinder(r=4, h=Hight, center=true);
+        translate([0,6,0])  cylinder(r=4, h=Hight, center=true);
+      translate([s,-6,0])  cylinder(r=4, h=Hight, center=true);
 
     }
    hull(){
-      translate([-1*s/2,-3,0])  cylinder(r=1.5, h=2, center=true);
-        translate([0,3,0])  cylinder(r=1.5, h=2, center=true);
-      translate([s/2,-3,0])  cylinder(r=1.5, h=2, center=true);
+      translate([-1*s/1.5,-4,0])  cylinder(r=3.5, h=Hight+1, center=true);
+        translate([0,3,0])  cylinder(r=3.5, h=Hight+1, center=true);
+      translate([s/1.5,-4,0])  cylinder(r=3.5, h=Hight+1, center=true);
 
     }
     }
@@ -87,7 +89,7 @@ module BatteryHolder()
 */
 
 $fn=50;
-multiColorInLay(state="inside",Color1=[1,.5,.5],Color2=[.5,.5,1])
+multiColorInLay(state="outside",Color1=[1,.5,.5],Color2=[.5,.5,1])
 {
   union(){
     import("C:\\Code\\PlayArea\\Git_OpenScad\\OpenScadProjects\\Projects\\GAeBadgeHolder\\Arduino_uno_R3_clip_Base.stl", convexity=3);

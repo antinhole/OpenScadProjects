@@ -1,8 +1,8 @@
 
 >>>
-    From: Courter, Jeremy
+    From: XXXXXX, Jeremy
     Sent: Wednesday, April 12, 2017 8:58 AM
-    To: Peters, James
+    To: XXXXXX, James
     Subject: Interalliance summer camp badges
 
     Jim,
