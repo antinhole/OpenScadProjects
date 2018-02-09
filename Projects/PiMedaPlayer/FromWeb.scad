@@ -2,7 +2,7 @@
 //http://www.thingiverse.com/thing:1887826
 
 // Which part to render; in OpenSCAD, use "everything" to render all models at once
- part = "front_button_dark_gray_2x"; // [top_light_gray:Top Part,bottom_dark_gray:Bottom Part,lid_light_gray:Lid,lid_light_gray_All:Lid,attachment_ribbons_black:Attachment Ribbons,foot_flexible_black_4x:Foot,front_button_dark_gray_2x:Front Button,led_red_transparent:Red LED]
+ part = "bottom_dark_gray"; // [top_light_gray:Top Part,bottom_dark_gray:Bottom Part,lid_light_gray:Lid,lid_light_gray_All:Lid,attachment_ribbons_black:Attachment Ribbons,foot_flexible_black_4x:Foot,front_button_dark_gray_2x:Front Button,led_red_transparent:Red LED]
 
 // You can choose between square vent holes (looks more like the original NES, but is a bit harder to print) and rounded vent holes (easier to print, slightly more modern look)
 top_vent_holes_type = "modern_rounded"; // [original_square, modern_rounded]
@@ -274,6 +274,7 @@ module bottom(support) {
 		translate([0,0,20]) back_insert();
 	}
 	
+
 	//shell
 	difference() {
 		bottom_shell(case_width, 100, 20);
@@ -325,6 +326,50 @@ module bottom(support) {
 		bottom_shell_sidecut(case_width, 100, 20); // make sure support doesn't extend out of case
 		translate([0,0,20]) back_insert();
 	}
+	buttonHolders();
+}
+module buttonHolders(){
+translate([35,6,0]) 
+buttonHolder();
+translate([23,6,0]) buttonHolder();
+}
+module buttonHolder(){
+ difference(){
+ //back
+
+	union(){
+		cube([3.7,7,15]);
+//	translate([0,-3,1]) cube([3,3,3]);
+	}
+	translate([2,0,8])
+	rotate([90, 0, 0]) {
+		pushbutton6mm();
+	}
+
+	}
+//	translate([2,0,8])
+//	rotate([90, 90, 0]) {
+//		pushbutton6mm();
+//	}
+}
+module pushbutton6mm()
+{
+	color("black")
+	cube([6,6,3.4],center=true);
+	translate([0, 0, 0.9]) {
+		cylinder(r=1.75, h=3.4 ,center=true);
+		
+	}
+//wires
+	translate([3, 4.5/2, -3.4])
+		cube([.3,.7,3.5],center=true);
+	translate([-3, 4.5/2, -3.4])
+		cube([.3,.7,3.5],center=true);
+	translate([3, -4.5/2, -3.4])
+		cube([.3,.7,3.5],center=true);
+	translate([-3, -4.5/2, -3.4])
+		cube([.3,.7,3.5],center=true);
+		
 }
 module top_shell(x, y, z) {
 	difference() {
@@ -332,9 +377,10 @@ module top_shell(x, y, z) {
 			translate([case_border_radius/2,case_border_radius/2,-case_border_radius/2]) cube([x-case_border_radius,y-case_border_radius,z], center=false);
 			sphere(d=1+case_border_radius, $fn=resolution, center=true);
 		}
-//	linear_extrude(height = 10, center = true, convexity = 10, twist = 0)
-//		Trifoce(5);
-		// sharp bottom edge
+		//	linear_extrude(height = 10, center = true, convexity = 10, twist = 0)
+
+		//		Trifoce(5);
+				// sharp bottom edge
 		translate([-5,-5,-z]) cube([x+10,y+10,z], center=false);
 	}
 }
@@ -617,6 +663,16 @@ module foot() {
 /*
 part = "everything"; // [everything:Everything,top_light_gray:Top part,bottom_dark_gray:Bottom part,lid_light_gray:Lid,attachment_ribbons_black:Attachment Ribbons,foot_flexible_black_4x:Foot,front_button_dark_gray_2x:Front Button,led_red_transparent:Red LED]
 */
+module testOfButtomAttacments(args) {
+	echo("this is the Test");
+	intersection(){
+	 bottom(true);
+	 cube([50,20,20],center=false);
+	}
+}
+//for testing 
+//if(1==0) 
+//!testOfButtomAttacments();
 
 #pi();
 if(part == "everything" || part == "bottom_dark_gray") translate([0,0,0.5]) bottom(true);

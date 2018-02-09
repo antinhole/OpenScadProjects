@@ -11,7 +11,7 @@
 // Jim Downloaded from: http://www.thingiverse.com/thing:779159/#files
 //
 
-part = "all"; // [ demo, all, top, bottom, button, button2, slider, slider2 ]
+part = "top"; // [ demo, all, top, bottom, button, button2, slider, slider2 ]
 with_batt = true; // [ true, false ]
 
 pcb = [4.6*25.4+0.2, 3*25.4+0.2, 1.1];

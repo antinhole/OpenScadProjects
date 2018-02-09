@@ -67,7 +67,7 @@ module  haringBoneGear(
 )
 {
 
-twist           = 360/number_of_teeth*AngleFactor;    //teeth rotate this many degrees from bottom of gear to top.  360 makes the gear a screw with each thread going around once
+twist           = (360/number_of_teeth)*AngleFactor;    //teeth rotate this many degrees from bottom of gear to top.  360 makes the gear a screw with each thread going around once
 translate([0,0,thickness/4])
 gear (
 	mm_per_tooth    = mm_per_tooth,    

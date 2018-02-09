@@ -26,6 +26,7 @@
     "showOutput": "always",
     
     "tasks":  [
+                   
             {
                
                 "taskName": "Display",
@@ -43,9 +44,9 @@
                 "taskName": "MakeSTL",
                 "isBuildCommand": false,
                 "args": [
-                    "\"C:\\Program Files\\OpenSCAD\\openscad.exe\""
-                    ,"--o ${fileBasenameNoExtension}.stl"
-                    ,"${file}"
+                    "\"\"%ProgramW6432%\\OpenSCAD\\openscad.exe\""
+                    ,"--o  \"${fileDirname}\\${fileBasenameNoExtension}.stl\""
+                    ,"${file}\""
                     ],
                  "echoCommand": true,
                  "suppressTaskName":true
